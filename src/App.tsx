@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Button, Typography, styled } from '@mui/material';
 import './App.css';
+import InfomationsList from './components/InfomationsList';
+import { useState } from 'react';
+import Contents from './components/Content'
 
-function App() {
+const Container = styled('div')({
+  height: '408px',
+  width: '366px',
+  borderRadius: '10px',
+  backgroundColor: 'white',
+  padding: '20px'
+})
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container>
+        <Typography style={{
+          marginBottom: '6px',
+          fontWeight: 'bold',
+          fontSize: '20px'
+        }}>お知らせ</Typography>
+        <Contents />
+        <div style={{
+          textAlign: 'center',
+          marginTop: '8px'
+        }}>
+          <Button style={{
+            width: '89px',
+            height: '22px',
+          }}>もっと見る</Button>
+        </div>
+
+      </Container>
+      <br />
+      <InfomationsList />
+    </>
   );
 }
 
